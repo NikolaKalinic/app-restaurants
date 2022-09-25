@@ -11,13 +11,21 @@ import { MenuItem } from '../MenuItem';
 })
 export class HomeComponent implements OnInit {
   public menuItems: MenuItem[];
+  public filterName: string;
   constructor(private router: Router, private appService: AppService) {
     this.menuItems = [];
+    this.filterName = '';
   }
 
   ngOnInit(): void {
     this.appService
       .getAllMenuItems()
+      .subscribe((res) => (this.menuItems = res));
+  }
+
+  findByName() {
+    this.appService
+      .filterByName(this.filterName)
       .subscribe((res) => (this.menuItems = res));
   }
 }

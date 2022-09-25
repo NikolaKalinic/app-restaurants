@@ -7,4 +7,13 @@
 #filter {
   margin-top: 3%;
   margin-left: 11%;
+  display: inline-block;
+}
+
+.button-fb {
+  text-align: right;
+  margin-left: 25%;
+}
+.button-fb button {
+  margin-left: 1%;
 }

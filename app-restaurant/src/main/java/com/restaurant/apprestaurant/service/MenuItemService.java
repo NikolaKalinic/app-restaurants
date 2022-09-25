@@ -28,4 +28,8 @@ public class MenuItemService {
     public MenuItem save(MenuItem menuItem){
         return  menuItemRepository.save(menuItem);
     }
+
+    public List<MenuItem> filterByName(String name){
+        return menuItemRepository.findByNameContaining(name);
+    }
 }

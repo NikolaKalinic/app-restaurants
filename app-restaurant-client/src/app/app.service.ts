@@ -11,4 +11,10 @@ export class AppService {
   getAllMenuItems() {
     return this.http.get<MenuItem[]>('http://localhost:8080/api/menu-items');
   }
+
+  filterByName(name: string) {
+    return this.http.get<MenuItem[]>(
+      `http://localhost:8080/api/menu-items/filter=${name}`
+    );
+  }
 }

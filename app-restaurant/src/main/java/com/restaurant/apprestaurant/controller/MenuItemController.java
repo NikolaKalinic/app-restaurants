@@ -45,4 +45,9 @@ public class MenuItemController {
     public ResponseEntity<MenuItem> save(@RequestBody MenuItem menuItem){
         return  new ResponseEntity<>(menuItemService.save(menuItem),HttpStatus.OK);
     }
+
+    @GetMapping(value="/filter={name}")
+    public ResponseEntity<List<MenuItem>> filterByName(@PathVariable String name){
+        return new ResponseEntity<>(menuItemService.filterByName(name),HttpStatus.OK);
+    }
 }
