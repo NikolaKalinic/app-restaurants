@@ -1,0 +1,17 @@
+#sign-up-form {
+  text-align: center;
+  padding: 20px;
+}
+.icon {
+  margin: 2%;
+}
+input[type="submit"] {
+  margin-left: 5%;
+  width: 15%;
+}
+#wrong-password {
+  display: none;
+}
+.glyphicon-remove {
+  color: red;
+}

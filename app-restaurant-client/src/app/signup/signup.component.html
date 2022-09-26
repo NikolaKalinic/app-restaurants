@@ -1,0 +1,35 @@
+<div>
+  <form id="sign-up-form">
+    <h2>Create account</h2>
+    <br />
+    <div>
+      <span class="glyphicon glyphicon-user icon"></span>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="username"
+      />
+    </div>
+    <div>
+      <span class="glyphicon glyphicon-lock icon"></span>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+    </div>
+    <div>
+      <span class="glyphicon glyphicon-wrench icon"> </span>
+      <input
+        type="password"
+        name="repeat-password"
+        placeholder="Repeat your password"
+        [(ngModel)]="passwordRepeat"
+      />
+      <span *ngIf="wrongPassword" class="glyphicon glyphicon-remove"></span>
+    </div>
+    <input type="submit" class="btn btn-primary" (click)="checkPassword()" />
+  </form>
+</div>
