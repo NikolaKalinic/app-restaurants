@@ -29,4 +29,13 @@ public class UserService {
     public User save(User user){
         return  userRepository.save(user);
     }
+
+    public User checkCredentials(User user){
+        User u = userRepository.findByUsername(user.getUsername());
+        if(u == null || !(u.getPassword().equals(user.getPassword()))){
+            return null;
+        }
+
+        return u;
+    }
 }

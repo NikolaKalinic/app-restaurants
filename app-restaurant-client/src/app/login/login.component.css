@@ -1,0 +1,35 @@
+.login-form {
+  margin-left: 30%;
+  margin-top: 5%;
+  width: 40%;
+  height: 40%;
+  background-color: lightgrey;
+  border: 2px solid black;
+  text-align: center;
+}
+.lab {
+  margin-left: 10%;
+  display: block;
+  text-align: left;
+}
+.field {
+  width: 80%;
+  height: 30px;
+}
+input[type="submit"] {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.register {
+  display: block;
+  text-align: right;
+  margin-right: 10%;
+}
+
+.username {
+  margin-bottom: 3%;
+}
+.err {
+  color: red;
+  font-weight: bold;
+}

@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="login-form">
+  <h3>Login form</h3>
+  <div>
+    <p *ngIf="showError" class="err">Wrong username or password !</p>
+    <form (ngSubmit)="checkCredentials()">
+      <div class="username">
+        <label class="lab">Username:</label>
+        <input
+          class="field"
+          type="text"
+          name="username"
+          [(ngModel)]="username"
+        />
+      </div>
+      <div>
+        <label class="lab">Password:</label>
+        <input
+          class="field"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+        />
+        <label class="register"
+          ><a [routerLink]="['/sign-up']">Register here</a></label
+        >
+      </div>
+      <input type="submit" class="btn btn-primary" />
+    </form>
+  </div>
+</div>

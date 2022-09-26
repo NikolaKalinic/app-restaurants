@@ -46,4 +46,8 @@ public class UserController {
     public ResponseEntity<User> save(@RequestBody User user){
         return  new ResponseEntity<>(userService.save(user),HttpStatus.OK);
     }
+    @PostMapping(value = "/check")
+    public ResponseEntity<User> checkCredentials(@RequestBody User user){
+        return new ResponseEntity<>(userService.checkCredentials(user),HttpStatus.OK);
+    }
 }

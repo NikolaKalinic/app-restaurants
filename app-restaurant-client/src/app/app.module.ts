@@ -10,6 +10,8 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { Router, RouterModule } from '@angular/router';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,14 @@ import { LoginComponent } from './login/login.component';
     SignupComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule,
+  ],
+  providers: [AppService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
