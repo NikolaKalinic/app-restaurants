@@ -28,12 +28,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of menuItems">
+      <tr *ngFor="let item of menuItems; let i = index">
         <td>{{ item.name }}</td>
         <td>{{ item.category.name }}</td>
         <td>{{ item.price }}</td>
         <td>
-          <button *ngIf="logged" type="button" class="btn btn-danger">
+          <button
+            *ngIf="logged"
+            type="button"
+            class="btn btn-danger"
+            (click)="deleteMenuItem(item)"
+          >
             delete
           </button>
           <button *ngIf="logged" type="button" class="btn btn-light">

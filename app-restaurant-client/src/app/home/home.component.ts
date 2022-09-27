@@ -26,15 +26,18 @@ export class HomeComponent implements OnInit {
     this.appService
       .getAllMenuItems()
       .subscribe((res) => (this.menuItems = res));
-
-    // this.appService.getLoggedUser === null
-    //   ? (this.logged = false)
-    //   : (this.logged = true);
   }
 
   findByName() {
     this.appService
       .filterByName(this.filterName)
+      .subscribe((res) => (this.menuItems = res));
+  }
+
+  async deleteMenuItem(i: MenuItem) {
+    const response = await this.appService.deleteMenuItem(i.id).toPromise();
+    this.appService
+      .getAllMenuItems()
       .subscribe((res) => (this.menuItems = res));
   }
 }

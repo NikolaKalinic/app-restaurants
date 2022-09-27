@@ -53,4 +53,8 @@ export class AppService {
     localStorage.setItem('user', JSON.stringify(null));
     this.editUser(null);
   }
+
+  deleteMenuItem(i: number) {
+    return this.http.delete<any>(`http://localhost:8080/api/menu-items/${i}`);
+  }
 }
