@@ -3,7 +3,7 @@ import { Category } from './category';
 export class MenuItem implements MenuItemInterface {
   public id: number;
   public name: string;
-  public price: number;
+  public price: number | null;
   public category: Category;
 
   constructor(miCfg: MenuItemInterface) {
@@ -17,6 +17,6 @@ export class MenuItem implements MenuItemInterface {
 export interface MenuItemInterface {
   id: number;
   name: string;
-  price: number;
+  price: number | null;
   category: Category;
 }

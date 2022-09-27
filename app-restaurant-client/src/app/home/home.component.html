@@ -1,4 +1,4 @@
-<div class="col-md-10">
+<div class="col-md-8">
   <form class="form-inline" id="filter">
     <div class="form-group">
       <label for="pwd">naziv:</label>
@@ -15,8 +15,13 @@
     </button>
   </form>
   <span class="button-fb">
-    <button><span class="glyphicon glyphicon-backward"></span></button>
-    <button><span class="glyphicon glyphicon-forward"></span></button>
+    <button *ngIf="page !== 0" (click)="decreasePage()">
+      <span class="glyphicon glyphicon-backward"></span>
+    </button>
+    <span>{{ this.appService.page }}</span>
+    <button *ngIf="page !== totalPages" (click)="increasePage()">
+      <span class="glyphicon glyphicon-forward"></span>
+    </button>
   </span>
   <table class="table">
     <thead>
@@ -41,7 +46,12 @@
           >
             delete
           </button>
-          <button *ngIf="logged" type="button" class="btn btn-light">
+          <button
+            *ngIf="logged"
+            (click)="updateItem(item)"
+            type="button"
+            class="btn btn-light"
+          >
             update
           </button>
         </td>
@@ -49,3 +59,4 @@
     </tbody>
   </table>
 </div>
+<app-update *ngIf="logged" (updateView)="update()"></app-update>

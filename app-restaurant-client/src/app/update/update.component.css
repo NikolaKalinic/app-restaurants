@@ -1,0 +1,19 @@
+label,
+select {
+  display: block;
+  margin-top: 3%;
+}
+.col-md-4 {
+  margin-top: 3%;
+}
+
+input[type="text"],
+select {
+  width: 70%;
+  height: 30px;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 3%;
+}

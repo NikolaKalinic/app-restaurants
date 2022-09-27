@@ -3,10 +3,12 @@ package com.restaurant.apprestaurant.controller;
 import com.restaurant.apprestaurant.model.MenuItem;
 import com.restaurant.apprestaurant.service.MenuItemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @RestController
@@ -18,8 +20,8 @@ public class MenuItemController {
     MenuItemService menuItemService;
 
     @GetMapping()
-    public ResponseEntity<List<MenuItem>> findAll(){
-        return  new ResponseEntity<>(menuItemService.findAll(), HttpStatus.OK);
+    public ResponseEntity<Page<MenuItem>> findAll(Pageable page){
+        return  new ResponseEntity<>(menuItemService.findAll(page), HttpStatus.OK);
     }
 
     @GetMapping(value = "{id}")

@@ -1,0 +1,24 @@
+<div class="col-md-4">
+  <form>
+    <div>
+      <label>name:</label>
+      <input type="text" [(ngModel)]="newMenuItem.name" name="name" />
+    </div>
+    <div>
+      <label>category:</label>
+      <select [(ngModel)]="newMenuItem.category" name="asd">
+        <option *ngFor="let c of categories" [ngValue]="c">
+          {{ c.name }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label>price:</label>
+      <input type="text" [(ngModel)]="newMenuItem.price" name="price" />
+    </div>
+    <div class="buttons">
+      <input type="reset" class="btn btn-warning" />
+      <input type="submit" (click)="createMenuItem()" class="btn btn-light" />
+    </div>
+  </form>
+</div>

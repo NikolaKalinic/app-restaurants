@@ -12,6 +12,8 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { Router, RouterModule } from '@angular/router';
 import { AppService } from './app.service';
+import { UpdateComponent } from './update/update.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { AppService } from './app.service';
     PageNotFoundComponent,
     SignupComponent,
     LoginComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { AppService } from './app.service';
     HttpClientModule,
     FormsModule,
     RouterModule,
+    NgxPaginationModule,
   ],
   providers: [AppService],
   bootstrap: [AppComponent],
